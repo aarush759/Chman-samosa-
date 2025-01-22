@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somasa The perfect triangle of happyness </title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        section {
+            padding: 80px 20px;
+        }
+ 
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+ 
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #003366;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+ 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+ 
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+ 
+        nav ul li {
+            margin-left: 30px;
+        }
+ 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+ 
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+ 
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #004d99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+ 
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+ 
+        /* About Section */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .about-text {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+ 
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+ 
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #003366;
+        }
+ 
+        /* Academics Section */
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .program-card {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+ 
+        /* Facilities Section */
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .facility {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        /* Events Section */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+ 
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+ 
+        .event-card h3, .event-card p, .event-card .date {
+            padding: 10px 20px;
+        }
+ 
+        .event-card .date {
+            color: #003366;
+            font-weight: bold;
+            display: block;
+        }
+ 
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+ 
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+ 
+        /* Student Life Section */
+        .life-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .life-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+ 
+        .life-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+ 
+        .life-card h3, .life-card p {
+            padding: 15px;
+        }
+ 
+        /* Achievements Section */
+        .achievements-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .achievement-card {
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+ 
+        .achievement-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+ 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .events-grid,
+            .gallery-grid,
+            .life-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+ 
+            .achievements-slider {
+                flex-direction: column;
+            }
+ 
+            .achievement-card {
+                min-width: unset;
+            }
+        }
+ 
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+ 
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+ 
+        .contact-form textarea {
+            height: 150px;
+        }
+ 
+        .contact-form button {
+            padding: 15px;
+            background: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+ 
+        .contact-form button:hover {
+            background: #002244;
+        }
+ 
+        /* Footer */
+        footer {
+            background: #002244;
+            color: white;
+            padding: 50px 20px 20px;
+        }
+ 
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .footer-section h4 {
+            margin-bottom: 20px;
+        }
+ 
+        .footer-section ul {
+            list-style: none;
+        }
+ 
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+ 
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+ 
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+ 
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+ 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 60px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Chman catering</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#student-life">Student Life</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to chman samosa catering</h1>
+            <p>a pastry with a savory filling, mostly vegetables, spiced potatoes, onions, and peas, but also meat or fish, will make your smile on your face </p>
+        </div>
+    </section>
+ 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>A caterer's role includes creating menus, preparing, delivering and serving meals at special events and ensuring compliance with food safety regulations. Prior training or a culinary education, excellent customer service, business acumen and versatile cooking expertise can improve a caterer's performance.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>staf members </p>
+                </div>
+                <div class="stat-item">
+                    <h3>10000+</h3>
+                    <p>workers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Academics Section -->
+    <section id="academics" class="academics">
+        <h2>What are the 7 P's of catering?</h2>
+        <div class="programs">
+            <div class="program-card">
+                <h3>Primary aganda </h3>
+                <p>“Dream big. Work hard. ...</p>
+            </div>
+            <div class="program-card">
+                <h3>primar gole </h3>
+                <p>tast meet's sole </p>
+            </div>
+            <div class="program-card">
+                <h3>High class food </h3>
+                <p>we are trying our best</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <h2>Our Facilities</h2>
+        <div class="facility-grid">
+            <div class="facility">
+                <h3>Chef</h3>
+                <p>You Want To Share Your Love of Food</p>
+            </div>
+            <div class="facility">
+                <h3>Library</h3>
+                <p>Extensive collection of books</p>
+            </div>
+            <div class="facility">
+                <h3>Sports Complex</h3>
+                <p>Multiple sports facilities</p>
+            </div>
+            <div class="facility">
+                <h3>Computer Lab</h3>
+                <p>Modern computer facilities</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <h2>Upcoming Events</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="data:image/jpeg;base64,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" alt="Annual Day">
+                <h3>Annual Day 2025</h3>
+                <p>Join us for our grand cultural celebration</p>
+                <span class="date">March 15, 2025</span>
+            </div>
+            <div class="event-card">
+                <img src="" alt="Sports Meet">
+                <h3>Sports Meet</h3>
+                <p>Annual inter-house sports competition</p>
+                <span class="date">April 5, 2025</span>
+            </div>
+            <div class="event-card">
+                <img src="https://via.placeholder.com/300x200" alt="Science Fair">
+                <h3>Science Exhibition</h3>
+                <p>Student projects and innovations showcase</p>
+                <span class="date">May 10, 2025</span>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>School Gallery</h2>
+        <div class="gallery-grid">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fzeenews.india.com%2Ffood-recipes%2Fyou-thought-samosa-is-a-mughlai-dish-heres-the-fact-2506808.htm&psig=AOvVaw3yhRa1eWU6t2P7fZcl8xb5&ust=1737092514703000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJC-pe_F-YoDFQAAAAAdAAAAABAE" alt="somasa">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.yourquote.in%2Ftags%2Fsamosa%2Fquotes&psig=AOvVaw3yhRa1eWU6t2P7fZcl8xb5&ust=1737092514703000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJC-pe_F-YoDFQAAAAAdAAAAABAJ.jpg" alt="Classroom">
+            <img src="https://via.placeholder.com/300x300" alt="Laboratory">
+            <img src="https://via.placeholder.com/300x300" alt="Library">
+            <img src="" alt="Playground">
+            <img src="https://via.placeholder.com/300x300" alt="Auditorium">
+        </div>
+    </section>
+ 
+    <!-- Student Life Section -->
+    <section id="student-life" class="student-life">
+        <h2>Student Life</h2>
+        <div class="life-grid">
+            <div class="life-card">
+                <img src="https://via.placeholder.com/400x300" alt="Clubs">
+                <h3>Student Clubs</h3>
+                <p>Join various clubs from robotics to art</p>
+            </div>
+            <div class="life-card">
+                <img src="https://bangaloreinternationalschool.org/wp-content/uploads/2022/04/Bis-Sports-day-11-min-1024x683.jpg" alt="Sports">
+                <h3>Sports Activities</h3>
+                <p>Participate in multiple sports disciplines</p>
+            </div>
+            <div class="life-card">
+                <img src="https://via.placeholder.com/400x300" alt="Cultural">
+                <h3>Cultural Activities</h3>
+                <p>Express yourself through dance, music, and drama</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <h2>Our Achievements</h2>
+        <div class="achievements-slider">
+            <div class="achievement-card">
+                <img src="https://via.placeholder.com/200x200" alt="Trophy">
+                <h3>Best School Award 2024</h3>
+                <p>Recognized for academic excellence</p>
+            </div>
+            <div class="achievement-card">
+                <img src="https://via.placeholder.com/200x200" alt="Medal">
+                <h3>Sports Championship</h3>
+                <p>State level winners in multiple categories</p>
+            </div>
+            <div class="achievement-card">
+                <img src="https://via.placeholder.com/200x200" alt="Certificate">
+                <h3>100% Results</h3>
+                <p>Consistent academic performance</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+ 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#events">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: info@excellenceschool.com</li>
+                    <li>Phone: +1 234 567 890</li>
+                    <li>Address: 123 School St, City, Country</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Excellence School. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
